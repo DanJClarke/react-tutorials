@@ -1,13 +1,11 @@
-const desc = 'just learned how to create a react node and render it to the DOM!';
-const myTitleID = 'main-title';
-const name = 'Dan';
-
-const header = (
-    <header id={ myTitleID }>
-        <h1>{ name }'s first React Element</h1>
-        <p className="main-desc">{ desc }</p>
-    </header>
-);
+function Header() {
+    return (
+        <header>
+            <h1>Scoreboard</h1>
+            <span className="stat">Player: 1</span>
+        </header>
+    );
+}
 
 
 ReactDOM.render(
