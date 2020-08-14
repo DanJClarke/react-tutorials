@@ -1,12 +1,14 @@
-const title = <h1>My First React Element!</h1>;
-const desc = <p>I just learned how to create a react node and render it to the DOM!</p>;
+const desc = 'just learned how to create a react node and render it to the DOM!';
+const myTitleID = 'main-title';
+const name = 'Dan';
 
-const header = React.createElement(
-    'header',
-    null,
-    title,
-    desc
+const header = (
+    <header id={ myTitleID }>
+        <h1>{ name }'s first React Element</h1>
+        <p className="main-desc">{ desc }</p>
+    </header>
 );
+
 
 ReactDOM.render(
     header,
