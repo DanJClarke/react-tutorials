@@ -37,6 +37,9 @@ const App = () => {
             />
             {/* Players List */}
             <Player name="Daniel Clarke" score="34" />
+            <Player name="John Smith" score="15" />
+            <Player name="Fred Rogers" score="50" />
+            <Player name="Joe Bloggs" score="32" />
         </div>
     );
 }
