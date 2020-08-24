@@ -44,7 +44,7 @@ class App extends Component {
           <div className="scoreboard">
               <Header
                   title="My Scoreboard"
-                  totalPlayers={ this.state.players.length }
+                  players={ this.state.players }
               />
               { this.state.players.map( (player, index) =>
                   <Player
