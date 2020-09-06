@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from './Context';
 import Header from './Header';
-import Player from './Player';
+import PlayerList from './PlayerList';
 import AddPlayerForm from './AddPlayerForm';
 class App extends Component {
     state = {
@@ -31,7 +31,7 @@ class App extends Component {
 
     prevPlayerId = 4
 
-    handlerRemovePlayer = (id) => {
+    handleRemovePlayer = (id) => {
         this.setState(prevState => ({
             players: prevState.players.filter(p => p.id !== id)
         }));
@@ -68,32 +68,27 @@ class App extends Component {
         return null;
     }
 
-  render() {
-    const highScore = this.getHighScore();
 
-      return (
+render() {
+    return (
         <Provider value={ this.state }>
             <div className="scoreboard">
-                <Header
-                    title="My Scoreboard"
+                <Header players={this.state.players} />
+                <PlayerList
+                    players={this.state.players}
+                    changeScore={this.handleScoreChange}
+                    removePlayer={this.handleRemovePlayer}
+                    getHighScore={this.getHighScore}
                 />
-                { this.state.players.map( (player, index) =>
-                    <Player
-                        name={ player.name }
-                        score={ player.score }
-                        id={ player.id }
-                        index = { index }
-                        changeScore={ this.handleScoreChange }
-                        key={ player.id.toString() }
-                        removePlayer={ this.handlerRemovePlayer }
-                        isHighScore={highScore === player.score}
-                    />
-                ) }
-                <AddPlayerForm addPlayer={ this.handleAddPlayer}/>
+                <AddPlayerForm addPlayer={this.handleAddPlayer} />
             </div>
         </Provider>
-      );
+    );
   }
 }
+
+
+
+
 
 export default App;
