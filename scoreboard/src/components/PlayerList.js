@@ -1,23 +1,33 @@
 import React from 'react';
 import Player from './Player';
+import PropTypes from 'prop-types';
+import { Consumer } from './Context';
 
-const PlayerList = ({players, getHighScore, changeScore, removePlayer}) => {
+const PlayerList = ({ getHighScore, changeScore, removePlayer }) => {
   return (
-    <React.Fragment>
-      {players.map((player, index) =>
-        <Player
-          index={index}
-          key={player.id.toString()}
-          id={player.id}
-          name={player.name}
-          score={player.score}
-          changeScore={changeScore}
-          removePlayer={removePlayer}
-          isHighScore={getHighScore() === player.score}
-        />
-      )}
-    </React.Fragment>
-  );
+    <Consumer>
+        {  context => (
+          <React.Fragment>
+            { context.players.map((player, index) =>
+              <Player
+                { ...player }
+                index={index}
+                key={player.id.toString()}
+                changeScore={changeScore}
+                removePlayer={removePlayer}
+                isHighScore={getHighScore() === player.score}
+              />
+            )}
+          </React.Fragment>
+         ) }
+        </Consumer>
+    );
 };
+
+PlayerList.propTypes = {
+  changeScore: PropTypes.func,
+  removePlayer: PropTypes.func,
+  getHighScore: PropTypes.number,
+}
 
 export default PlayerList;
