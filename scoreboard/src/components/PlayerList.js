@@ -13,7 +13,6 @@ const PlayerList = ({ getHighScore, changeScore, removePlayer }) => {
                 { ...player }
                 index={index}
                 key={player.id.toString()}
-                changeScore={changeScore}
                 removePlayer={removePlayer}
                 isHighScore={getHighScore() === player.score}
               />
@@ -25,7 +24,6 @@ const PlayerList = ({ getHighScore, changeScore, removePlayer }) => {
 };
 
 PlayerList.propTypes = {
-  changeScore: PropTypes.func,
   removePlayer: PropTypes.func,
   getHighScore: PropTypes.number,
 }
