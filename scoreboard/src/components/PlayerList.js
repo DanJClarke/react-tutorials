@@ -3,7 +3,7 @@ import Player from './Player';
 import PropTypes from 'prop-types';
 import { Consumer } from './Context';
 
-const PlayerList = ({ getHighScore, changeScore, removePlayer }) => {
+const PlayerList = ({ getHighScore }) => {
   return (
     <Consumer>
         {  context => (
@@ -13,7 +13,6 @@ const PlayerList = ({ getHighScore, changeScore, removePlayer }) => {
                 { ...player }
                 index={index}
                 key={player.id.toString()}
-                removePlayer={removePlayer}
                 isHighScore={getHighScore() === player.score}
               />
             )}
@@ -24,7 +23,6 @@ const PlayerList = ({ getHighScore, changeScore, removePlayer }) => {
 };
 
 PlayerList.propTypes = {
-  removePlayer: PropTypes.func,
   getHighScore: PropTypes.number,
 }
 

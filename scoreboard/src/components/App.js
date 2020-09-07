@@ -73,16 +73,17 @@ render() {
         <Provider value={{
             players: this.state.players,
             actions: {
-                changeScore: this.handleScoreChange
+                changeScore: this.handleScoreChange,
+                removePlayer: this.handleRemovePlayer,
+                addPlayer: this.handleAddPlayer
             }
         }}>
             <div className="scoreboard">
                 <Header />
                 <PlayerList
-                    removePlayer={this.handleRemovePlayer}
                     getHighScore={this.getHighScore}
                 />
-                <AddPlayerForm addPlayer={this.handleAddPlayer} />
+                <AddPlayerForm />
             </div>
         </Provider>
     );
