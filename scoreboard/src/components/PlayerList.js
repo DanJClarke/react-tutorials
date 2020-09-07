@@ -13,7 +13,7 @@ const PlayerList = ({ getHighScore }) => {
                 { ...player }
                 index={index}
                 key={player.id.toString()}
-                isHighScore={getHighScore() === player.score}
+                isHighScore={context.actions.getHighScore() === player.score}
               />
             )}
           </React.Fragment>

@@ -16,9 +16,10 @@ class Player extends PureComponent {
     render(){
         const {
             name,
-            id,
             score,
+            id,
             index,
+            isHighScore
         } = this.props;
 
         return (
@@ -27,7 +28,7 @@ class Player extends PureComponent {
                     {  context => (
                         <span className="player-name">
                             <button className="remove-player" onClick={ () => context.actions.removePlayer(id) }>✖</button>
-                            <Icon isHighScore={this.props.isHighScore} />
+                            <Icon isHighScore={isHighScore} />
                             { name }
                          </span>
                     ) }
