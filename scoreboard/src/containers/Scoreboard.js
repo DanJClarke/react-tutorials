@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Player from './Player';
-import AddPlayerForm from './AddPlayerForm';
-class App extends Component {
+import Header from '../components/Header';
+import Player from '../components/Player';
+import AddPlayerForm from '../components/AddPlayerForm';
+class Scoreboard extends Component {
     state = {
         players: [
             {
@@ -94,4 +94,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Scoreboard;
