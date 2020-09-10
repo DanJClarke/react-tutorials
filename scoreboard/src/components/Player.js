@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from '../../node_modules/react';
 import Counter from './Counter';
-import Icon from './Icon'; 
+import Icon from './Icon';
 import PropTypes from 'prop-types';
 
 class Player extends PureComponent {

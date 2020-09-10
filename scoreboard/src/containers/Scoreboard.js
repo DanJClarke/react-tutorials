@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from  '../../node_modules/react';
 import Header from '../components/Header';
 import Player from '../components/Player';
 import AddPlayerForm from '../components/AddPlayerForm';
