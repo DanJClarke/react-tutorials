@@ -2,28 +2,24 @@ import * as PlayerActionTypes from '../actiontypes/player';
 
 const initialState = [
     {
-        players: [
-            {
-                name: "Daniel",
-                score: 0,
-                id: 1
-            },
-            {
-                name: "John",
-                score: 0,
-                id: 2
-            },
-            {
-                name: "Fred",
-                score: 0,
-                id: 3
-            },
-            {
-                name: "Joe",
-                score: 0,
-                id: 4
-            }
-        ]
+        name: "Daniel",
+        score: 0,
+        id: 1
+    },
+    {
+        name: "John",
+        score: 0,
+        id: 2
+    },
+    {
+        name: "Fred",
+        score: 0,
+        id: 3
+    },
+    {
+        name: "Joe",
+        score: 0,
+        id: 4
     }
 ];
 
