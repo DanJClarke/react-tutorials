@@ -1,7 +1,7 @@
 import React, { PureComponent } from '../../node_modules/react';
 import Counter from './Counter';
 import Icon from './Icon';
-import PropTypes from 'prop-types';
+import PropTypes from '../../node_modules/prop-types';
 
 class Player extends PureComponent {
     static propTypes = {
