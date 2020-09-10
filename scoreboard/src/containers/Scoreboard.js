@@ -34,10 +34,9 @@ class Scoreboard extends Component {
                   <Player
                       name={ player.name }
                       score={ player.score }
-                      id={ player.id }
                       index = { index }
                       changeScore={ handleScoreChange }
-                      key={ player.id.toString() }
+                      key={ player.name }
                       removePlayer={ handlerRemovePlayer }
                      // isHighScore={highScore === player.score}
                   />
