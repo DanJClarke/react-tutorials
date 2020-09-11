@@ -7,22 +7,22 @@ import Header from '../components/Header';
 import Player from '../components/Player';
 import AddPlayerForm from '../components/AddPlayerForm';
 class Scoreboard extends Component {
-    // getHighScore = () => {
-    //     const scores = this.state.players.map( p => p.score );
-    //     const highScore = Math.max(...scores);
-    //     if (highScore) {
-    //       return highScore;
-    //     }
-
-    //     return null;
-    // }
+    // 
 
   render() {
-    //const highScore = this.getHighScore();
     const { dispatch, players } = this.props;
     const handlerRemovePlayer = bindActionCreators(PlayerActionCreators.removeplayer, dispatch);
     const handleScoreChange = bindActionCreators(PlayerActionCreators.updatePlayerScore, dispatch);
     const handleAddPlayer = bindActionCreators(PlayerActionCreators.addplayer, dispatch);
+    const getHighScore = () => {
+            const scores = players.map( p => p.score );
+            const highScore = Math.max(...scores);
+            if (highScore) {
+               return highScore;
+             }
+
+             return null;
+    }
 
       return (
           <div className="scoreboard">
@@ -38,7 +38,7 @@ class Scoreboard extends Component {
                       changeScore={ handleScoreChange }
                       key={ player.name }
                       removePlayer={ handlerRemovePlayer }
-                     // isHighScore={highScore === player.score}
+                      isHighScore={ getHighScore() === player.score }
                   />
               ) }
               <AddPlayerForm addPlayer={ handleAddPlayer }/>
