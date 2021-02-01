@@ -1,28 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ScoreboardContext } from './Context';
 import Player from './Player';
-import PropTypes from 'prop-types';
-import { Consumer } from './Context';
 
-const PlayerList = ({ getHighScore }) => {
+const PlayerList = () => {
+  const { players } = useContext(ScoreboardContext);
   return (
-    <Consumer>
-        {  ({ players, actions }) => (
-          <React.Fragment>
-            { players.map((player, index) =>
-              <Player
-                index={index}
-                key={player.id.toString()}
-                isHighScore={ actions.getHighScore() === player.score }
-              />
-            )}
-          </React.Fragment>
-         ) }
-        </Consumer>
-    );
-};
-
-PlayerList.propTypes = {
-  getHighScore: PropTypes.number,
+    <>
+      {players.map( (player, index) => 
+        <Player 
+          key={player.id} 
+          index={index}
+        />
+      )}
+    </>
+  );
 }
 
 export default PlayerList;
